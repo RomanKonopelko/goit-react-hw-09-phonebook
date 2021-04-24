@@ -1,0 +1,46 @@
+body {
+  font-family: Roboto;
+}
+
+.form__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 0 auto;
+}
+
+.list__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  margin-bottom: 20px;
+  line-height: 30px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.button {
+  background-color: rgba(64, 11, 253, 0.692);
+  color: white;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 4px;
+}

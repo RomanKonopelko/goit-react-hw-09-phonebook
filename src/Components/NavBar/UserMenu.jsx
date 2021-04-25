@@ -30,7 +30,7 @@ export default function UserMenu() {
     const name = useSelector(getUserName);
 
     const dispatch = useDispatch();
-    const onLogout = () => dispatch(authOperations.logout)
+    const onLogout = () => dispatch(authOperations.logout())
 
     return (
         <div style={styles.container}>

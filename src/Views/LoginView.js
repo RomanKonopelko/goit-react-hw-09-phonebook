@@ -54,7 +54,7 @@ export default function LoginView() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const onLogin = () => dispatch(authOperations.login);
+  const onLogin = data => dispatch(authOperations.login(data));
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {

@@ -62,7 +62,7 @@ export default function RegisterView() {
   });
 
   const dispatch = useDispatch();
-  const onRegister = () => dispatch(authOperations.onRegister);
+  const onRegister = data => dispatch(authOperations.register(data));
 
   const handleChange = ({ target: { name, value } }) => {
     switch (name) {
@@ -85,6 +85,7 @@ export default function RegisterView() {
       setEmail('');
       setPassword('');
       setError(false);
+      return;
     } else {
       setError(true);
     }

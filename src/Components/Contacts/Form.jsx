@@ -8,8 +8,8 @@ export default function Form() {
     const dispatch = useDispatch();
     const onSubmit = (data) => dispatch(operations.addContact(data))
 
-    const [name, setName] = useState('');
-    const [number, setNumber] = useState('');
+    const [userName, setName] = useState('');
+    const [userNumber, setNumber] = useState('');
 
     const isValidPhonenumber = (input) => {
         const phoneRegex = /^\d{10}$/;
@@ -23,20 +23,23 @@ export default function Form() {
         setName('');
     };
 
+
+
     const handleChange = e => {
         const { value, name } = e.currentTarget;
+        console.log(value);
         if (name === 'number') {
             if (isNaN(value)) {
                 return
             }
-            setName(value)
+            setNumber(value)
         }
         if (name === 'name') {
             const letters = /^[a-zA-Z ]+(?:\s[a-zA-Z]+)?$/
             if (!value.match(letters) && value.length > 0) {
                 return
             }
-            setNumber(value)
+            setName(value)
         }
 
         // this.setState({
@@ -47,16 +50,16 @@ export default function Form() {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (name === 0) {
+        if (userName === 0) {
             return alert('Write your name')
 
         }
-        if (!isValidPhonenumber(number)) {
+        if (!isValidPhonenumber(userNumber)) {
             return alert('An invalid number')
         }
         onSubmit({
-            name,
-            number,
+            name: userName,
+            number: userNumber,
         })
 
         reset();
@@ -70,7 +73,7 @@ export default function Form() {
             id={nameInputId}
             className={s.input}
             name="name"
-            value={name}
+            value={userName}
             onChange={handleChange}
             placeholder='your name'
         />
@@ -81,7 +84,7 @@ export default function Form() {
             id={numberInputId}
             className={s.input}
             name="number"
-            value={number}
+            value={userNumber}
             onChange={handleChange}
             placeholder="1234567890"
         />

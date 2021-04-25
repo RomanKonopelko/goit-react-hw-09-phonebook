@@ -11,7 +11,7 @@ export default function ContactsView() {
 
   useEffect(() => {
     dispatch(operations.fetchContacts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Container className={s.form__container} title="Phonebook">
